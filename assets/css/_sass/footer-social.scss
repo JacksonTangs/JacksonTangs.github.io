@@ -36,6 +36,7 @@
 .fa-github,
 .fa-orcid,
 .fa-researchgate,
+.fa-instagram,
 .fa-envelope {
   font-size: 25px;
 }
@@ -108,4 +109,14 @@
   color: #5dd1b0;
   background: #fefefe;
   border-color: #5dd1b0;
+}
+
+.rounded-social-buttons .social-button.instagram {
+  background: #125688;
+}
+
+.rounded-social-buttons .social-button.instagram:hover, .rounded-social-buttons .social-button.instagram:focus {
+  color: #125688;
+  background: #fefefe;
+  border-color: #125688;
 }
