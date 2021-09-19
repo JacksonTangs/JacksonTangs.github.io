@@ -1,153 +1,24 @@
 ---
 layout: post
-title: Project 5
-description: another project
+title: 火灾监测模型
+description: 基于 WSN 的环境火灾监测模型的安全性研究及实现
 ---
 
-Example modified from [here](http://www.unexpected-vortices.com/sw/rippledoc/quick-markdown-example.html){:target="_blank"}.
+This project is my work from from March to August in 2019 , work with Liyao Tong, [Zijian Zhao](https://www.researchgate.net/profile/Zijian-Zhao-11), Qian Su and Defan Xue, supervised by by [Prof. Yingxu Lai](http://dmslab.hkg03.bdysite.com/index.php/people/yingxu-lai/) and [LECT. Jing Liu](https://english.bjut.edu.cn/info/1152/1586.htm). We invent a fire monitoring system that is resistant to collusion attacks. And posted the work as a [patent](https://cprs.patentstar.com.cn/Search/Detail?ANE=8BFA9EGB9GDC5AFA9EHD9EHD9GIFCHHAAIDA9IEH8CGAAHHA) .
 
-H1 Header
-============
+In the process of rapid economic development, the issue of natural resource protection is particularly important. The protection of vegetation resources against fire is an important aspect. The frequent occurrence of large-scale forest and grassland fires in recent years, where the source of fire is not controlled in time, is a major problem, indicating the lack of a highly timely and effective fire monitoring system in this area.
 
-Paragraphs are separated by a blank line.
+Combining the advantages of flexible distribution, large scale and dynamic monitoring of Wireless Sensor Networks (WSN), this work proposes a grassland fire monitoring model with hierarchical detection of WSN nodes and secure data transmission. In terms of node security detection within the WSN, the node security is detected layer by layer from the sensor nodes collecting data, to the cluster head aggregating data, and then to the gateway. In WSN nodes based on time correlation, differential filtering is applied to obtain sensor anomaly time series; based on spatial correlation, improved D-S evidence theory model and proximity detection model are applied to distinguish malicious and faulty nodes, discard malicious node data, reduce the impact of malicious injection data on the model and improve the model detection accuracy; finally, based on event correlation, malicious nodes are verified by temperature field The WSN performs data analysis in real time, resisting joint attacks by complicit nodes and enabling low-cost, more efficient monitoring of fire occurrences and maximising the reduction of losses caused by fires. In terms of secure data transmission within the WSN, the routing is done through an ant colony algorithm that improves the way pheromone concentration is calculated to select the data transmission path. This method reduces WSN energy consumption, avoids local power depletion of the system, and considers link quality and path trust to reduce transmission packet loss rate, greatly reducing the overall security risk, preventing information leakage in transmission and improving the efficiency of message transmission. In addition, to ensure secure data sharing after data transmission, proxy re-encryption based on shamir threshold is applied to ensure the confidentiality, integrity and authenticity of data in the wireless sensor network by using symmetric encryption mechanism for sensor data.
 
-2nd paragraph. *Italic*, **bold**, and `monospace`. Itemized lists
-look like:
+The collection environment of the meadow dataset used in the WSN node security detection part of this work is the Huahai grassland in Dulan County, Qinghai Province, and the industrial lathe sensor production collection dataset provided by the Aliyun Tianchi competition is used in the data security transmission part. After experimental comparison, it is proved that the correlation-based node detection model can locate the scope of fire occurrence more accurately and resist the wrong data injection attack by the complicit nodes to achieve normal monitoring under the attack. Secure data transmission enables optimal path finding, greatly reducing link consumption, and proxy re-encryption mechanisms ensure secure data sharing.
 
-  * this one
-  * that one
-  * the other one
+<img src="./fig1.png"  div align=center />
 
-Note that --- not considering the asterisk --- the actual text
-content starts at 4-columns in.
+<img src="./fig2.png"  div align=center />
 
-> Block quotes are
-> written like so.
->
-> They can span multiple paragraphs,
-> if you like.
+<img src="./fig3.png"  div align=center />
 
-Use 3 dashes for an em-dash. Use 2 dashes for ranges (ex., "it's all
-in chapters 12--14"). Three dots ... will be converted to an ellipsis.
-Unicode is supported. ☺
+<img src="./fig4.png"  div align=center />
 
+<img src="./fig5.png"  div align=center />
 
-H2 Header
-------------
-
-Here's a numbered list:
-
- 1. first item
- 2. second item
- 3. third item
-
-Note again how the actual text starts at 4 columns in (4 characters
-from the left side). Here's a code sample:
-
-    # Let me re-iterate ...
-    for i in 1 .. 10 { do-something(i) }
-
-As you probably guessed, indented 4 spaces. By the way, instead of
-indenting the block, you can use delimited blocks, if you like:
-
-~~~
-define foobar() {
-    print "Welcome to flavor country!";
-}
-~~~
-
-(which makes copying & pasting easier). You can optionally mark the
-delimited block for Pandoc to syntax highlight it:
-
-~~~python
-import time
-# Quick, count to ten!
-for i in range(10):
-    # (but not *too* quick)
-    time.sleep(0.5)
-    print(i)
-~~~
-
-
-
-### An h3 header ###
-
-Now a nested list:
-
- 1. First, get these ingredients:
-
-      * carrots
-      * celery
-      * lentils
-
- 2. Boil some water.
-
- 3. Dump everything in the pot and follow
-    this algorithm:
-
-        find wooden spoon
-        uncover pot
-        stir
-        cover pot
-        balance wooden spoon precariously on pot handle
-        wait 10 minutes
-        goto first step (or shut off burner when done)
-
-    Do not bump wooden spoon or it will fall.
-
-Notice again how text always lines up on 4-space indents (including
-that last line which continues item 3 above).
-
-Here's a link to [a website](http://foo.bar), to a [local
-doc](local-doc.html), and to a [section heading in the current
-doc](#an-h2-header). Here's a footnote [^1].
-
-[^1]: Some footnote text.
-
-Tables can look like this:
-
-| Header 1 | Header 2                   | Header 3 |
-|:--------:|:--------------------------:|:--------:|
-| data1a   | Data is longer than header | 1        |
-| d1b      | add a cell                 |          |
-| lorem    | ipsum                      | 3        |
-|          | empty outside cells        |          |
-| skip     |                            | 5        |
-| six      | Morbi purus                | 6        |
-
-
-A horizontal rule follows.
-
-***
-
-Here's a definition list:
-
-apples
-  : Good for making applesauce.
-
-oranges
-  : Citrus!
-
-tomatoes
-  : There's no "e" in tomatoe.
-
-Again, text is indented 4 spaces. (Put a blank line between each
-term and  its definition to spread things out more.)
-
-Here's a "line block" (note how whitespace is honored):
-
-| Line one
-|   Line too
-| Line tree
-
-and images can be specified like so:
-
-![example image](https://images.unsplash.com/photo-1488190211105-8b0e65b80b4e?w=500&h=500&fit=crop "An exemplary image")
-
-Inline math equation: $\omega = d\phi / dt$. Display
-math should get its own line like so:
-
-$$I = \int \rho R^{2} dV$$
-
-And note that you can backslash-escape any punctuation characters
-which you wish to be displayed literally, ex.: \`foo\`, \*bar\*, etc.
