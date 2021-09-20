@@ -19,10 +19,26 @@
         {% include favicon.html %}
 
         {% include mathjax.html %}
-        {% google_map %}
 
         <!-- Load fontawesome here for faster loadtimes: https://stackoverflow.com/a/35880730/9523246 -->
         <script type="text/javascript"> (function() { var css = document.createElement('link'); css.href = 'https://use.fontawesome.com/releases/v5.11.0/css/all.css'; css.rel = 'stylesheet'; css.type = 'text/css'; document.getElementsByTagName('head')[0].appendChild(css); })(); </script>
+        <script>
+      // Initialize and add the map
+          function initMap() {
+            // The location of Uluru
+            const uluru = { lat: 51.5, lng: 0.1 };
+            // The map, centered at Uluru
+            const map = new google.maps.Map(document.getElementById("map"), {
+              zoom: 8,
+              center: uluru,
+            });
+            // The marker, positioned at Uluru
+            const marker = new google.maps.Marker({
+              position: uluru,
+              map: map,
+            });
+          }
+        </script>
 
     </head>
 
@@ -31,6 +47,17 @@
             <article>
                 {{ content }}
             </article>
+            <h3>My Location</h3>
+            <!--The div element for the map -->
+            <div id="map"></div>
+
+            <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
+            <script
+              src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCDULd9JtRUplrEWQ8ASRY2DduPVKqc_l8&callback=initMap&libraries=&v=weekly"
+              async
+            ></script>
+
+
         </main>
 
         <footer>
